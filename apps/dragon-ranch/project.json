@@ -8,18 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/dragon-ranch",
         "index": "apps/dragon-ranch/src/index.html",
         "main": "apps/dragon-ranch/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/dragon-ranch/tsconfig.app.json",
         "assets": [
           "apps/dragon-ranch/src/favicon.ico",
           "apps/dragon-ranch/src/assets"
         ],
-        "styles": ["apps/dragon-ranch/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/dragon-ranch/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -69,7 +76,9 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/dragon-ranch/**/*.ts",
@@ -79,7 +88,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/dragon-ranch/jest.config.ts",
         "passWithNoTests": true
